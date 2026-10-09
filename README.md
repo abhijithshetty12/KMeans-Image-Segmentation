@@ -31,26 +31,6 @@ The project was developed as a practical demonstration of **Unsupervised Learnin
 
 ---
 
-## 🧠 How K-Means Image Segmentation Works
-
-Each pixel is represented as a three-dimensional RGB vector:
-
-\[
-P_i = [R_i, G_i, B_i]
-\]
-
-K-Means partitions the pixels into **K color clusters** by repeatedly assigning pixels to their nearest centroid and updating each centroid as the mean of its assigned pixels. It aims to minimize within-cluster squared Euclidean distances:
-
-\[
-J = \sum_{k=1}^{K} \sum_{x_i \in C_k} \|x_i - \mu_k\|^2
-\]
-
-Once clustering is complete, each pixel is replaced with its assigned cluster's centroid color to form the segmented image. The application can also isolate the original pixels belonging to each cluster.
-
-> **Important:** These clusters represent **similar colors, not recognized objects**. Parts of different objects can belong to the same cluster when their colors are similar.
-
----
-
 ## 🔄 Machine Learning Workflow
 
 ```text
@@ -146,12 +126,10 @@ KMeans-Image-Segmentation/
 ├── README.md               # Project documentation
 ├── screenshots/
 │   └── dashboard.png        # App screenshot for README preview
-├── KMeans_Test_Images/      # Optional local sample images
+├── test-images/      # Optional local sample images
 │
 └── .gitignore              # Excludes .venv, __pycache__, local files
 ```
-
-The `KMeans_Test_Images` directory is optional and is not needed for deployment. Virtual environments and cache files should not be committed.
 
 ---
 
@@ -162,8 +140,6 @@ The `KMeans_Test_Images` directory is optional and is not needed for deployment.
 <p align="center">
   <img src="screenshots/dashboard.png" alt="Chroma Cluster dashboard showing K-Means image segmentation" width="100%" />
 </p>
-
-> The screenshot must be committed at `screenshots/dashboard.png` in the GitHub repository for this preview to appear.
 
 ---
 
@@ -226,8 +202,6 @@ To stop the app, press **Ctrl + C** in the terminal.
 4. Select the `main` branch and use `app.py` as the entry point.
 5. Choose Python 3.11 and deploy.
 6. Visit the deployed app: **[chromacluster-ai.streamlit.app](https://chromacluster-ai.streamlit.app/)**.
-
-> The application processes uploaded images during each user session. Avoid uploading sensitive images to an online deployment unless you understand the hosting provider's privacy and data-handling terms.
 
 ---
 
