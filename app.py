@@ -10,7 +10,7 @@ from PIL import Image, ImageOps
 from sklearn.cluster import KMeans, MiniBatchKMeans
 from sklearn.metrics import silhouette_score
 
-st.set_page_config(page_title="ColorLab | K-Means Segmentation", page_icon="🎨", layout="wide")
+st.set_page_config(page_title="Chroma Cluster | K-Means Segmentation", page_icon="🎨", layout="wide")
 st.markdown("""
 <style>
 .block-container {padding-top: 2rem; max-width: 1250px;}
@@ -76,7 +76,7 @@ def rgb_hex(c: np.ndarray) -> str:
     return "#" + "".join(f"{int(v):02x}" for v in c)
 
 
-st.title("🎨 ColorLab — K-Means Image Segmentation")
+st.title("🎨 Chroma Cluster — K-Means Image Segmentation")
 st.caption("Upload any photo → cluster pixels by RGB similarity → inspect each separated color region. Runs locally on your computer.")
 
 with st.sidebar:
